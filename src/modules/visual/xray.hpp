@@ -31,7 +31,7 @@ public:
 
     int radiusHorizontal = 16;
     int radiusVertical = 16;
-    std::string material = "selection_box";
+    std::string material = "name_tag";
     OreType ores[kOreCount];
 
 private:
