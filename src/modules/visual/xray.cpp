@@ -139,7 +139,7 @@ std::string s_materialLoaded;
 std::string s_materialFailed;
 
 std::mutex s_materialMutex;
-std::string s_materialWanted = "selection_box";
+std::string s_materialWanted = "name_tag";
 std::atomic<uint32_t> s_materialVersion{1};
 uint32_t s_materialSeenVersion = 0;
 
@@ -476,7 +476,7 @@ void XrayModule::loadConfig(const nlohmann::json& j) {
     }
 
     // The render thread picks up a new material name the next frame (see ensureMaterial).
-    std::string wanted = j.value("material", material);
+    std::string wanted = material;
     if (wanted != material) {
         material = wanted;
         {
